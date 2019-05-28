@@ -1,0 +1,7 @@
+#Save the following to testGeometry.in
+include Co3O4.lattice   #we will use the same input file later for 110 and 111
+include Co3O4.ionpos
+core-overlap-check None
+
+
+ion-species GBRV/$ID_pbe.uspp

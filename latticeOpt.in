@@ -1,0 +1,12 @@
+#Save the following to latticeOpt.in
+include Co3O4.lattice
+include Co3O4.ionpos
+
+kpoint-folding 8 8 8
+ion-species GBRV/$ID_pbe.uspp
+elec-cutoff 20 100
+
+electronic-SCF                   #Electronic state optimization
+lattice-minimize nIterations 10  #Lattice and ionic geometry optimization
+dump-name Si.$VAR
+dump Ionic State ElecDensity         #Output state every geometry (ionic/lattice) step

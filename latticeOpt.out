@@ -1,0 +1,1522 @@
+
+*************** JDFTx 1.4.2  ***************
+
+Start date and time: Mon Mar  4 13:31:39 2019
+Executable jdftx with command-line: -i latticeOpt.in
+Running on hosts (process indices):  dhcp-ccc-1230.eduroam.cornell.edu (0-3)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)
+Resource initialization completed at t[s]:      0.00
+Run totals: 4 processes, 12 threads, 0 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+dump Ionic State
+dump-name Si.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42
+forces-output-coords Positions
+ion Si   0.000000000000000   0.000000000000000   0.000000000000000 1
+ion Si   0.300000000000000   0.300000000000000   0.300000000000000 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 8 8 8 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice Face-Centered Cubic 11.3
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          10 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.001
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 48 point-group symmetries of the bravais lattice
+Found 12 space-group symmetries with basis
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[          0       5.65       5.65  ]
+[       5.65          0       5.65  ]
+[       5.65       5.65          0  ]
+unit cell volume = 360.724
+G =
+[  -0.556034   0.556034   0.556034  ]
+[   0.556034  -0.556034   0.556034  ]
+[   0.556034   0.556034  -0.556034  ]
+Minimum fftbox size, Smin = [  36  36  36  ]
+Chosen fftbox size, S = [  36  36  36  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[          0       5.65       5.65  ]
+[       5.65          0       5.65  ]
+[       5.65       5.65          0  ]
+unit cell volume = 360.724
+G =
+[  -0.556034   0.556034   0.556034  ]
+[   0.556034  -0.556034   0.556034  ]
+[   0.556034   0.556034  -0.556034  ]
+Minimum fftbox size, Smin = [  36  36  36  ]
+Chosen fftbox size, S = [  36  36  36  ]
+Disabling tighter grid as its sample count matches original.
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/Users/juanmendezvalderrama/Documents/JDFTX/build/pseudopotentials/GBRV/si_pbe.uspp':
+  Title: Si.  Created by USPP 7.3.6 on 14-9-2013
+  Reference state energy: -4.599342.  4 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.397366
+    |310>  occupation: 2  eigenvalue: -0.149981
+  lMax: 2  lLocal: 3  QijEcut: 5
+  6 projectors sampled on a log grid with 627 points:
+    l: 0  eig: -0.397364  rCut: 1.6
+    l: 0  eig: 1.000000  rCut: 1.6
+    l: 1  eig: -0.149982  rCut: 1.6
+    l: 1  eig: 1.000000  rCut: 1.6
+    l: 2  eig: -0.100000  rCut: 1.7
+    l: 2  eig: 0.100000  rCut: 1.7
+  Partial core density with radius 1.45
+  Transforming core density to a uniform radial grid of dG=0.02 with 1665 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1665 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1665 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.70 bohrs.
+
+Initialized 1 species with 2 total atoms.
+
+Folded 1 k-points by 8x8x8 to 512 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+Reduced to 65 k-points under symmetry. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons:   8.000000   nBands: 4   nStates: 65
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 1541.982 , ideal nbasis = 1541.041
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 2.566132 bohr.
+Real space sum over 1331 unit cells with max indices [  5  5  5  ]
+Reciprocal space sum over 2197 terms with max indices [  6  6  6  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+Si pseudo-atom occupations:   s ( 2 )  p ( 2 )
+	FillingsUpdate:  mu: +0.158606479  nElectrons: 8.000000
+LCAOMinimize: Iter:   0  Etot: -7.8499589472443585  |grad|_K:  4.253e-04  alpha:  1.000e+00
+	FillingsUpdate:  mu: +0.159320203  nElectrons: 8.000000
+LCAOMinimize: Iter:   1  Etot: -7.8502845967475094  |grad|_K:  3.501e-05  alpha:  7.215e-01  linmin:  5.242e-03  cgtest:  7.929e-02  t[s]:      1.51
+	FillingsUpdate:  mu: +0.159397590  nElectrons: 8.000000
+LCAOMinimize: Iter:   2  Etot: -7.8502874011591528  |grad|_K:  3.851e-06  alpha:  8.687e-01  linmin: -3.203e-03  cgtest:  3.280e-02  t[s]:      1.87
+	FillingsUpdate:  mu: +0.159404756  nElectrons: 8.000000
+LCAOMinimize: Iter:   3  Etot: -7.8502874318051070  |grad|_K:  2.385e-07  alpha:  7.840e-01  linmin: -6.967e-03  cgtest: -2.046e-02  t[s]:      2.23
+LCAOMinimize: None of the convergence criteria satisfied after 3 iterations.
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      2.25
+
+
+--------- Lattice Minimization ---------
+Minimization of dimension 2 over strains spanned by:
+[  0.57735  0  0  ]
+[  0  0.57735  0  ]
+[  0  0  0.57735  ]
+
+[  0  0.408248  0.408248  ]
+[  0.408248  0  0.408248  ]
+[  0.408248  0.408248  0  ]
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.893036342077670   dEtot: -4.485e-02   |Residual|: 6.013e-02   |deigs|: 6.572e-03  t[s]:      2.90
+SCF: Cycle:  1   Etot: -7.894619221975697   dEtot: -1.583e-03   |Residual|: 3.806e-02   |deigs|: 5.429e-03  t[s]:      3.33
+SCF: Cycle:  2   Etot: -7.895315278127069   dEtot: -6.961e-04   |Residual|: 9.184e-03   |deigs|: 9.811e-03  t[s]:      3.77
+SCF: Cycle:  3   Etot: -7.895352493241917   dEtot: -3.722e-05   |Residual|: 3.298e-03   |deigs|: 1.626e-03  t[s]:      4.23
+SCF: Cycle:  4   Etot: -7.895379132759345   dEtot: -2.664e-05   |Residual|: 6.083e-04   |deigs|: 9.653e-04  t[s]:      4.67
+SCF: Cycle:  5   Etot: -7.895390576208687   dEtot: -1.144e-05   |Residual|: 3.403e-04   |deigs|: 6.664e-05  t[s]:      4.98
+SCF: Cycle:  6   Etot: -7.895398761938150   dEtot: -8.186e-06   |Residual|: 3.401e-04   |deigs|: 4.359e-05  t[s]:      5.29
+SCF: Cycle:  7   Etot: -7.895404500748805   dEtot: -5.739e-06   |Residual|: 1.680e-04   |deigs|: 5.685e-05  t[s]:      5.58
+SCF: Cycle:  8   Etot: -7.895409881746199   dEtot: -5.381e-06   |Residual|: 1.728e-04   |deigs|: 2.142e-05  t[s]:      5.87
+SCF: Cycle:  9   Etot: -7.895413105158234   dEtot: -3.223e-06   |Residual|: 9.465e-05   |deigs|: 1.948e-05  t[s]:      6.16
+SCF: Cycle: 10   Etot: -7.895414975327221   dEtot: -1.870e-06   |Residual|: 4.388e-05   |deigs|: 1.118e-05  t[s]:      6.44
+SCF: Cycle: 11   Etot: -7.895416886421899   dEtot: -1.911e-06   |Residual|: 1.913e-04   |deigs|: 3.856e-06  t[s]:      6.85
+SCF: Cycle: 12   Etot: -7.895419160179111   dEtot: -2.274e-06   |Residual|: 4.688e-04   |deigs|: 1.176e-05  t[s]:      7.38
+SCF: Cycle: 13   Etot: -7.895419682770861   dEtot: -5.226e-07   |Residual|: 3.751e-04   |deigs|: 1.148e-05  t[s]:      7.70
+SCF: Cycle: 14   Etot: -7.895420753880851   dEtot: -1.071e-06   |Residual|: 3.570e-04   |deigs|: 1.126e-05  t[s]:      8.00
+SCF: Cycle: 15   Etot: -7.895421223010071   dEtot: -4.691e-07   |Residual|: 3.419e-04   |deigs|: 3.183e-06  t[s]:      8.28
+SCF: Cycle: 16   Etot: -7.895421416292645   dEtot: -1.933e-07   |Residual|: 2.892e-04   |deigs|: 3.475e-06  t[s]:      8.55
+SCF: Cycle: 17   Etot: -7.895421587171736   dEtot: -1.709e-07   |Residual|: 2.661e-04   |deigs|: 3.002e-06  t[s]:      8.86
+SCF: Cycle: 18   Etot: -7.895421712677555   dEtot: -1.255e-07   |Residual|: 2.402e-04   |deigs|: 1.583e-06  t[s]:      9.15
+SCF: Cycle: 19   Etot: -7.895421747915566   dEtot: -3.524e-08   |Residual|: 4.180e-04   |deigs|: 1.139e-05  t[s]:      9.46
+SCF: Cycle: 20   Etot: -7.895421921150252   dEtot: -1.732e-07   |Residual|: 8.898e-05   |deigs|: 2.278e-05  t[s]:      9.81
+SCF: Cycle: 21   Etot: -7.895421968937861   dEtot: -4.779e-08   |Residual|: 5.944e-05   |deigs|: 6.244e-06  t[s]:     10.10
+SCF: Cycle: 22   Etot: -7.895422001293403   dEtot: -3.236e-08   |Residual|: 3.481e-05   |deigs|: 5.248e-06  t[s]:     10.41
+SCF: Cycle: 23   Etot: -7.895422039819989   dEtot: -3.853e-08   |Residual|: 2.115e-05   |deigs|: 2.168e-06  t[s]:     10.70
+SCF: Cycle: 24   Etot: -7.895422065523629   dEtot: -2.570e-08   |Residual|: 2.162e-05   |deigs|: 2.879e-06  t[s]:     10.99
+SCF: Cycle: 25   Etot: -7.895422081951605   dEtot: -1.643e-08   |Residual|: 2.526e-05   |deigs|: 7.806e-07  t[s]:     11.27
+SCF: Cycle: 26   Etot: -7.895422098090262   dEtot: -1.614e-08   |Residual|: 2.339e-05   |deigs|: 2.812e-07  t[s]:     11.54
+SCF: Cycle: 27   Etot: -7.895422106574984   dEtot: -8.485e-09   |Residual|: 2.609e-05   |deigs|: 1.889e-06  t[s]:     11.86
+SCF: Cycle: 28   Etot: -7.895422114693857   dEtot: -8.119e-09   |Residual|: 1.781e-05   |deigs|: 2.030e-06  t[s]:     12.15
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[          0       5.65       5.65  ]
+[       5.65          0       5.65  ]
+[       5.65       5.65          0  ]
+unit cell volume = 360.724
+
+# Strain Tensor:
+[            0            0            0  ]
+[            0            0            0  ]
+[            0            0            0  ]
+
+# Stress Tensor:
+[  0.000379615 -6.22316e-05 -6.22316e-05  ]
+[ -6.22316e-05  0.000379615 -6.22316e-05  ]
+[ -6.22316e-05 -6.22316e-05  0.000379615  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.000000000000000   0.000000000000000   0.000000000000000 1
+ion Si   0.300000000000000   0.300000000000000   0.300000000000000 1
+
+
+# Forces in Lattice coordinates:
+force Si   0.205596741805554   0.205596741805554   0.205596741805554 1
+force Si  -0.205596741805554  -0.205596741805554  -0.205596741805554 1
+
+# Energy components:
+   Eewald =       -7.5871913944387792
+       EH =        0.6888647766686062
+     Eloc =       -2.7937107964114323
+      Enl =        1.5517632264294106
+      Exc =       -4.1548158952663670
+ Exc_core =        1.6535435937139140
+       KE =        2.7461243746107686
+-------------------------------------
+     Etot =       -7.8954221146938774
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   0  Etot: -7.895422114693877  |grad|_K:  3.818e-02  t[s]:     13.46
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.898224614237488   dEtot: -6.878e-04   |Residual|: 9.666e-03   |deigs|: 1.366e-04  t[s]:     14.38
+SCF: Cycle:  1   Etot: -7.898295628374577   dEtot: -7.101e-05   |Residual|: 5.585e-03   |deigs|: 3.815e-04  t[s]:     14.70
+SCF: Cycle:  2   Etot: -7.898348934841300   dEtot: -5.331e-05   |Residual|: 1.053e-03   |deigs|: 5.059e-04  t[s]:     14.98
+SCF: Cycle:  3   Etot: -7.898416748003726   dEtot: -6.781e-05   |Residual|: 9.335e-04   |deigs|: 1.378e-04  t[s]:     15.28
+SCF: Cycle:  4   Etot: -7.898430318578480   dEtot: -1.357e-05   |Residual|: 6.045e-04   |deigs|: 2.652e-05  t[s]:     15.59
+SCF: Cycle:  5   Etot: -7.898449737477986   dEtot: -1.942e-05   |Residual|: 5.413e-04   |deigs|: 6.476e-05  t[s]:     15.99
+SCF: Cycle:  6   Etot: -7.898469212700371   dEtot: -1.948e-05   |Residual|: 1.806e-04   |deigs|: 5.822e-05  t[s]:     16.27
+SCF: Cycle:  7   Etot: -7.898477136082482   dEtot: -7.923e-06   |Residual|: 9.193e-05   |deigs|: 1.806e-05  t[s]:     16.54
+SCF: Cycle:  8   Etot: -7.898481551186512   dEtot: -4.415e-06   |Residual|: 1.224e-04   |deigs|: 9.677e-06  t[s]:     16.81
+SCF: Cycle:  9   Etot: -7.898484704388371   dEtot: -3.153e-06   |Residual|: 9.170e-05   |deigs|: 1.027e-05  t[s]:     17.08
+SCF: Cycle: 10   Etot: -7.898493098992137   dEtot: -8.395e-06   |Residual|: 1.279e-04   |deigs|: 2.283e-05  t[s]:     17.45
+SCF: Cycle: 11   Etot: -7.898496033062269   dEtot: -2.934e-06   |Residual|: 1.292e-04   |deigs|: 6.914e-06  t[s]:     17.68
+SCF: Cycle: 12   Etot: -7.898496194733906   dEtot: -1.617e-07   |Residual|: 1.112e-04   |deigs|: 1.152e-06  t[s]:     17.93
+SCF: Cycle: 13   Etot: -7.898496713637879   dEtot: -5.189e-07   |Residual|: 1.151e-04   |deigs|: 2.367e-06  t[s]:     18.24
+SCF: Cycle: 14   Etot: -7.898497072716784   dEtot: -3.591e-07   |Residual|: 5.301e-05   |deigs|: 3.936e-06  t[s]:     18.52
+SCF: Cycle: 15   Etot: -7.898497259103000   dEtot: -1.864e-07   |Residual|: 4.575e-05   |deigs|: 6.213e-07  t[s]:     18.83
+SCF: Cycle: 16   Etot: -7.898497402136522   dEtot: -1.430e-07   |Residual|: 5.120e-05   |deigs|: 7.747e-07  t[s]:     19.12
+SCF: Cycle: 17   Etot: -7.898497511459366   dEtot: -1.093e-07   |Residual|: 8.654e-05   |deigs|: 1.732e-06  t[s]:     19.41
+SCF: Cycle: 18   Etot: -7.898497597800610   dEtot: -8.634e-08   |Residual|: 8.230e-05   |deigs|: 7.242e-07  t[s]:     19.67
+SCF: Cycle: 19   Etot: -7.898497665543903   dEtot: -6.774e-08   |Residual|: 9.132e-05   |deigs|: 9.176e-07  t[s]:     19.93
+SCF: Cycle: 20   Etot: -7.898497718859523   dEtot: -5.332e-08   |Residual|: 7.565e-05   |deigs|: 6.328e-07  t[s]:     20.20
+SCF: Cycle: 21   Etot: -7.898497774421355   dEtot: -5.556e-08   |Residual|: 3.309e-05   |deigs|: 4.916e-06  t[s]:     20.50
+SCF: Cycle: 22   Etot: -7.898497812472034   dEtot: -3.805e-08   |Residual|: 2.031e-05   |deigs|: 8.473e-07  t[s]:     20.76
+SCF: Cycle: 23   Etot: -7.898497838500967   dEtot: -2.603e-08   |Residual|: 1.216e-05   |deigs|: 4.910e-07  t[s]:     21.02
+SCF: Cycle: 24   Etot: -7.898497858442947   dEtot: -1.994e-08   |Residual|: 7.198e-06   |deigs|: 7.265e-07  t[s]:     21.27
+SCF: Cycle: 25   Etot: -7.898497874240999   dEtot: -1.580e-08   |Residual|: 8.627e-06   |deigs|: 7.597e-07  t[s]:     21.54
+SCF: Cycle: 26   Etot: -7.898497886681103   dEtot: -1.244e-08   |Residual|: 6.891e-06   |deigs|: 1.349e-07  t[s]:     21.80
+SCF: Cycle: 27   Etot: -7.898497896609740   dEtot: -9.929e-09   |Residual|: 5.004e-06   |deigs|: 1.652e-07  t[s]:     22.06
+SCF: Cycle: 28   Etot: -7.898497904494513   dEtot: -7.885e-09   |Residual|: 6.710e-06   |deigs|: 4.296e-08  t[s]:     22.31
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+LatticeMinimize: 	Wolfe criterion not satisfied: alpha: 1  (E-E0)/|gdotd0|: -1.05527  gdotd/gdotd0: 1.04533 (taking cubic step)
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.904011365779636   dEtot: -2.697e-03   |Residual|: 1.893e-02   |deigs|: 5.272e-04  t[s]:     24.44
+SCF: Cycle:  1   Etot: -7.904327205556354   dEtot: -3.158e-04   |Residual|: 1.053e-02   |deigs|: 7.985e-04  t[s]:     24.85
+SCF: Cycle:  2   Etot: -7.904441743369067   dEtot: -1.145e-04   |Residual|: 1.459e-03   |deigs|: 9.872e-04  t[s]:     25.23
+SCF: Cycle:  3   Etot: -7.904448714913876   dEtot: -6.972e-06   |Residual|: 8.202e-04   |deigs|: 5.233e-05  t[s]:     25.53
+SCF: Cycle:  4   Etot: -7.904450959781069   dEtot: -2.245e-06   |Residual|: 1.495e-04   |deigs|: 3.765e-05  t[s]:     25.84
+SCF: Cycle:  5   Etot: -7.904451938630233   dEtot: -9.788e-07   |Residual|: 9.863e-05   |deigs|: 5.623e-06  t[s]:     26.14
+SCF: Cycle:  6   Etot: -7.904452457983690   dEtot: -5.194e-07   |Residual|: 8.634e-05   |deigs|: 4.663e-06  t[s]:     26.45
+SCF: Cycle:  7   Etot: -7.904452844096616   dEtot: -3.861e-07   |Residual|: 1.885e-05   |deigs|: 4.488e-06  t[s]:     26.75
+SCF: Cycle:  8   Etot: -7.904453058648485   dEtot: -2.146e-07   |Residual|: 1.828e-05   |deigs|: 1.025e-06  t[s]:     27.04
+SCF: Cycle:  9   Etot: -7.904453161765833   dEtot: -1.031e-07   |Residual|: 1.037e-05   |deigs|: 4.383e-07  t[s]:     27.33
+SCF: Cycle: 10   Etot: -7.904453282924349   dEtot: -1.212e-07   |Residual|: 9.193e-06   |deigs|: 6.648e-07  t[s]:     27.63
+SCF: Cycle: 11   Etot: -7.904453337408382   dEtot: -5.448e-08   |Residual|: 6.821e-06   |deigs|: 1.901e-07  t[s]:     27.91
+SCF: Cycle: 12   Etot: -7.904453360052011   dEtot: -2.264e-08   |Residual|: 2.197e-06   |deigs|: 4.138e-07  t[s]:     28.20
+SCF: Cycle: 13   Etot: -7.904453384059330   dEtot: -2.401e-08   |Residual|: 2.002e-06   |deigs|: 1.869e-07  t[s]:     28.53
+SCF: Cycle: 14   Etot: -7.904453394503812   dEtot: -1.044e-08   |Residual|: 2.926e-06   |deigs|: 1.326e-08  t[s]:     28.86
+SCF: Cycle: 15   Etot: -7.904453412252323   dEtot: -1.775e-08   |Residual|: 1.141e-05   |deigs|: 1.897e-07  t[s]:     29.16
+SCF: Cycle: 16   Etot: -7.904453417212293   dEtot: -4.960e-09   |Residual|: 1.127e-05   |deigs|: 2.111e-07  t[s]:     29.46
+SCF: Cycle: 17   Etot: -7.904453422561808   dEtot: -5.350e-09   |Residual|: 1.037e-05   |deigs|: 3.972e-08  t[s]:     29.77
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+LatticeMinimize: 	Wolfe criterion not satisfied: alpha: 2.95915  (E-E0)/|gdotd0|: -3.09855  gdotd/gdotd0: 1.03858 (taking cubic step)
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.914082136285303   dEtot: -1.125e-02   |Residual|: 3.852e-02   |deigs|: 2.143e-03  t[s]:     31.93
+SCF: Cycle:  1   Etot: -7.915363044010213   dEtot: -1.281e-03   |Residual|: 2.123e-02   |deigs|: 1.739e-03  t[s]:     32.34
+SCF: Cycle:  2   Etot: -7.915862200587926   dEtot: -4.992e-04   |Residual|: 3.109e-03   |deigs|: 2.157e-03  t[s]:     32.75
+SCF: Cycle:  3   Etot: -7.915875940074065   dEtot: -1.374e-05   |Residual|: 1.530e-03   |deigs|: 1.364e-04  t[s]:     33.04
+SCF: Cycle:  4   Etot: -7.915880496498144   dEtot: -4.556e-06   |Residual|: 4.003e-04   |deigs|: 4.360e-05  t[s]:     33.33
+SCF: Cycle:  5   Etot: -7.915882871548483   dEtot: -2.375e-06   |Residual|: 1.239e-04   |deigs|: 3.655e-05  t[s]:     33.63
+SCF: Cycle:  6   Etot: -7.915884103372436   dEtot: -1.232e-06   |Residual|: 9.838e-05   |deigs|: 8.965e-06  t[s]:     33.92
+SCF: Cycle:  7   Etot: -7.915884809850708   dEtot: -7.065e-07   |Residual|: 7.744e-05   |deigs|: 2.298e-06  t[s]:     34.20
+SCF: Cycle:  8   Etot: -7.915885236792261   dEtot: -4.269e-07   |Residual|: 5.423e-05   |deigs|: 4.596e-06  t[s]:     34.47
+SCF: Cycle:  9   Etot: -7.915885504745090   dEtot: -2.680e-07   |Residual|: 1.823e-05   |deigs|: 6.442e-07  t[s]:     34.76
+SCF: Cycle: 10   Etot: -7.915885740923161   dEtot: -2.362e-07   |Residual|: 3.816e-05   |deigs|: 5.566e-07  t[s]:     35.05
+SCF: Cycle: 11   Etot: -7.915885844018490   dEtot: -1.031e-07   |Residual|: 2.228e-05   |deigs|: 1.767e-07  t[s]:     35.33
+SCF: Cycle: 12   Etot: -7.915885918938585   dEtot: -7.492e-08   |Residual|: 3.632e-05   |deigs|: 2.552e-07  t[s]:     35.63
+SCF: Cycle: 13   Etot: -7.915885973299676   dEtot: -5.436e-08   |Residual|: 3.184e-05   |deigs|: 2.617e-07  t[s]:     35.93
+SCF: Cycle: 14   Etot: -7.915886000535151   dEtot: -2.724e-08   |Residual|: 3.787e-05   |deigs|: 2.198e-07  t[s]:     36.22
+SCF: Cycle: 15   Etot: -7.915886013797829   dEtot: -1.326e-08   |Residual|: 3.435e-05   |deigs|: 4.019e-07  t[s]:     36.52
+SCF: Cycle: 16   Etot: -7.915886023573752   dEtot: -9.776e-09   |Residual|: 2.896e-05   |deigs|: 3.795e-06  t[s]:     36.83
+SCF: Cycle: 17   Etot: -7.915886028018106   dEtot: -4.444e-09   |Residual|: 3.808e-05   |deigs|: 5.115e-06  t[s]:     37.14
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+LatticeMinimize: 	Wolfe criterion not satisfied: alpha: 6.87745  (E-E0)/|gdotd0|: -7.02096  gdotd/gdotd0: 0.948759 (taking cubic step)
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.923277690637570   dEtot: -4.894e-02   |Residual|: 8.475e-02   |deigs|: 9.134e-03  t[s]:     39.26
+SCF: Cycle:  1   Etot: -7.929302888436354   dEtot: -6.025e-03   |Residual|: 4.583e-02   |deigs|: 3.825e-03  t[s]:     39.68
+SCF: Cycle:  2   Etot: -7.931944358153712   dEtot: -2.641e-03   |Residual|: 7.288e-03   |deigs|: 4.416e-03  t[s]:     40.13
+SCF: Cycle:  3   Etot: -7.932014210524281   dEtot: -6.985e-05   |Residual|: 3.162e-03   |deigs|: 5.450e-04  t[s]:     40.49
+SCF: Cycle:  4   Etot: -7.932032205531470   dEtot: -1.800e-05   |Residual|: 3.842e-04   |deigs|: 1.177e-04  t[s]:     40.79
+SCF: Cycle:  5   Etot: -7.932039205962602   dEtot: -7.000e-06   |Residual|: 1.608e-04   |deigs|: 2.106e-05  t[s]:     41.09
+SCF: Cycle:  6   Etot: -7.932042804828985   dEtot: -3.599e-06   |Residual|: 1.594e-04   |deigs|: 6.676e-06  t[s]:     41.37
+SCF: Cycle:  7   Etot: -7.932044820566601   dEtot: -2.016e-06   |Residual|: 4.360e-05   |deigs|: 1.266e-05  t[s]:     41.67
+SCF: Cycle:  8   Etot: -7.932045964598056   dEtot: -1.144e-06   |Residual|: 4.312e-05   |deigs|: 2.062e-06  t[s]:     41.96
+SCF: Cycle:  9   Etot: -7.932046635994266   dEtot: -6.714e-07   |Residual|: 1.760e-05   |deigs|: 3.936e-06  t[s]:     42.25
+SCF: Cycle: 10   Etot: -7.932047034173397   dEtot: -3.982e-07   |Residual|: 1.256e-05   |deigs|: 7.209e-07  t[s]:     42.54
+SCF: Cycle: 11   Etot: -7.932047273886266   dEtot: -2.397e-07   |Residual|: 6.604e-06   |deigs|: 3.959e-07  t[s]:     42.84
+SCF: Cycle: 12   Etot: -7.932047418913303   dEtot: -1.450e-07   |Residual|: 1.338e-05   |deigs|: 5.261e-07  t[s]:     43.13
+SCF: Cycle: 13   Etot: -7.932047507992996   dEtot: -8.908e-08   |Residual|: 8.970e-06   |deigs|: 2.626e-07  t[s]:     43.43
+SCF: Cycle: 14   Etot: -7.932047562609890   dEtot: -5.462e-08   |Residual|: 1.820e-05   |deigs|: 2.604e-07  t[s]:     43.73
+SCF: Cycle: 15   Etot: -7.932047596685433   dEtot: -3.408e-08   |Residual|: 1.081e-05   |deigs|: 3.950e-07  t[s]:     44.04
+SCF: Cycle: 16   Etot: -7.932047617716286   dEtot: -2.103e-08   |Residual|: 1.436e-05   |deigs|: 2.917e-07  t[s]:     44.33
+SCF: Cycle: 17   Etot: -7.932047631095276   dEtot: -1.338e-08   |Residual|: 1.269e-05   |deigs|: 1.860e-07  t[s]:     44.62
+SCF: Cycle: 18   Etot: -7.932047639354514   dEtot: -8.259e-09   |Residual|: 1.592e-05   |deigs|: 1.406e-07  t[s]:     44.92
+SCF: Cycle: 19   Etot: -7.932047644676849   dEtot: -5.322e-09   |Residual|: 1.285e-05   |deigs|: 6.367e-07  t[s]:     45.22
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[  0.0584615    5.50092    5.50092  ]
+[    5.50092  0.0584615    5.50092  ]
+[    5.50092    5.50092  0.0584615  ]
+unit cell volume = 327.61
+
+# Strain Tensor:
+[    -0.031559   0.00517358   0.00517358  ]
+[   0.00517358    -0.031559   0.00517358  ]
+[   0.00517358   0.00517358    -0.031559  ]
+
+# Stress Tensor:
+[   0.00036314  2.31114e-05  2.31114e-05  ]
+[  2.31114e-05   0.00036314  2.31114e-05  ]
+[  2.31114e-05  2.31114e-05   0.00036314  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.023849378042205   0.023849378042205   0.023849378042205 1
+ion Si   0.276150621957795   0.276150621957795   0.276150621957795 1
+
+
+# Forces in Lattice coordinates:
+force Si   0.031267499167249   0.031267499167249   0.031267499167249 1
+force Si  -0.031267499167249  -0.031267499167249  -0.031267499167249 1
+
+# Energy components:
+   Eewald =       -7.8743246371956017
+       EH =        0.6472994111673218
+     Eloc =       -2.5349218780768803
+      Enl =        1.5619837968218322
+      Exc =       -4.2041900932629233
+ Exc_core =        1.6535430456768156
+       KE =        2.8185627101925927
+-------------------------------------
+     Etot =       -7.9320476446768442
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   1  Etot: -7.932047644676844  |grad|_K:  1.895e-02  alpha:  1.471e+01  linmin: -1.143e-01  t[s]:     46.46
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.032 +0.032
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.939892933307040   dEtot: -7.913e-03   |Residual|: 3.514e-02   |deigs|: 1.490e-03  t[s]:     47.37
+SCF: Cycle:  1   Etot: -7.940817742141975   dEtot: -9.248e-04   |Residual|: 1.889e-02   |deigs|: 1.880e-03  t[s]:     47.81
+SCF: Cycle:  2   Etot: -7.941233516672954   dEtot: -4.158e-04   |Residual|: 3.064e-03   |deigs|: 2.260e-03  t[s]:     48.24
+SCF: Cycle:  3   Etot: -7.941239029375442   dEtot: -5.513e-06   |Residual|: 1.948e-03   |deigs|: 3.972e-04  t[s]:     48.54
+SCF: Cycle:  4   Etot: -7.941244250995618   dEtot: -5.222e-06   |Residual|: 3.568e-04   |deigs|: 2.040e-04  t[s]:     48.85
+SCF: Cycle:  5   Etot: -7.941245553135114   dEtot: -1.302e-06   |Residual|: 1.409e-04   |deigs|: 2.782e-05  t[s]:     49.16
+SCF: Cycle:  6   Etot: -7.941246089352769   dEtot: -5.362e-07   |Residual|: 8.205e-05   |deigs|: 9.808e-06  t[s]:     49.46
+SCF: Cycle:  7   Etot: -7.941246363924406   dEtot: -2.746e-07   |Residual|: 3.268e-05   |deigs|: 5.217e-06  t[s]:     49.77
+SCF: Cycle:  8   Etot: -7.941246505602527   dEtot: -1.417e-07   |Residual|: 2.875e-05   |deigs|: 2.258e-06  t[s]:     50.07
+SCF: Cycle:  9   Etot: -7.941246584246595   dEtot: -7.864e-08   |Residual|: 3.595e-05   |deigs|: 6.245e-07  t[s]:     50.37
+SCF: Cycle: 10   Etot: -7.941246628028087   dEtot: -4.378e-08   |Residual|: 1.717e-05   |deigs|: 2.235e-06  t[s]:     50.68
+SCF: Cycle: 11   Etot: -7.941246653025416   dEtot: -2.500e-08   |Residual|: 1.660e-05   |deigs|: 5.102e-07  t[s]:     50.98
+SCF: Cycle: 12   Etot: -7.941246666922143   dEtot: -1.390e-08   |Residual|: 1.518e-05   |deigs|: 1.825e-07  t[s]:     51.28
+SCF: Cycle: 13   Etot: -7.941246675113108   dEtot: -8.191e-09   |Residual|: 1.473e-05   |deigs|: 3.809e-07  t[s]:     51.58
+SCF: Cycle: 14   Etot: -7.941246679738970   dEtot: -4.626e-09   |Residual|: 1.119e-05   |deigs|: 2.964e-07  t[s]:     51.88
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[  0.0272423    5.27189    5.27189  ]
+[    5.27189  0.0272423    5.27189  ]
+[    5.27189    5.27189  0.0272423  ]
+unit cell volume = 290.77
+
+# Strain Tensor:
+[    -0.069333   0.00241082   0.00241082  ]
+[   0.00241082    -0.069333   0.00241082  ]
+[   0.00241082   0.00241082    -0.069333  ]
+
+# Stress Tensor:
+[  0.000151106 -1.74814e-05 -1.74814e-05  ]
+[ -1.74814e-05  0.000151106 -1.74814e-05  ]
+[ -1.74814e-05 -1.74814e-05  0.000151106  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.028038059524857   0.028038059524857   0.028038059524857 1
+ion Si   0.271961940475143   0.271961940475143   0.271961940475143 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.079993616754614  -0.079993616754614  -0.079993616754614 1
+force Si   0.079993616754614   0.079993616754614   0.079993616754614 1
+
+# Energy components:
+   Eewald =       -8.1954285152915904
+       EH =        0.5904044098041235
+     Eloc =       -2.2636654493778314
+      Enl =        1.5988706783973969
+      Exc =       -4.2679650113563214
+ Exc_core =        1.6535486482355066
+       KE =        2.9429885598497609
+-------------------------------------
+     Etot =       -7.9412466797389545
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   2  Etot: -7.941246679738954  |grad|_K:  1.478e-02  alpha:  1.000e+00  linmin: -2.683e-01  t[s]:     53.13
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.034 +0.034
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.940719715712651   dEtot: -9.214e-03   |Residual|: 3.870e-02   |deigs|: 1.809e-03  t[s]:     54.06
+SCF: Cycle:  1   Etot: -7.941816546796025   dEtot: -1.097e-03   |Residual|: 2.049e-02   |deigs|: 2.174e-03  t[s]:     54.48
+SCF: Cycle:  2   Etot: -7.942266067842613   dEtot: -4.495e-04   |Residual|: 2.889e-03   |deigs|: 2.309e-03  t[s]:     54.92
+SCF: Cycle:  3   Etot: -7.942272901754638   dEtot: -6.834e-06   |Residual|: 1.252e-03   |deigs|: 2.309e-04  t[s]:     55.22
+SCF: Cycle:  4   Etot: -7.942275671708393   dEtot: -2.770e-06   |Residual|: 2.117e-04   |deigs|: 7.841e-05  t[s]:     55.53
+SCF: Cycle:  5   Etot: -7.942276644657203   dEtot: -9.729e-07   |Residual|: 8.910e-05   |deigs|: 1.617e-05  t[s]:     55.83
+SCF: Cycle:  6   Etot: -7.942277107869322   dEtot: -4.632e-07   |Residual|: 7.911e-05   |deigs|: 6.826e-06  t[s]:     56.14
+SCF: Cycle:  7   Etot: -7.942277348547434   dEtot: -2.407e-07   |Residual|: 2.930e-05   |deigs|: 4.756e-06  t[s]:     56.44
+SCF: Cycle:  8   Etot: -7.942277476717413   dEtot: -1.282e-07   |Residual|: 2.110e-05   |deigs|: 4.250e-06  t[s]:     56.74
+SCF: Cycle:  9   Etot: -7.942277547870191   dEtot: -7.115e-08   |Residual|: 9.625e-06   |deigs|: 1.440e-07  t[s]:     57.03
+SCF: Cycle: 10   Etot: -7.942277588456878   dEtot: -4.059e-08   |Residual|: 1.098e-05   |deigs|: 7.099e-07  t[s]:     57.33
+SCF: Cycle: 11   Etot: -7.942277611955351   dEtot: -2.350e-08   |Residual|: 3.993e-06   |deigs|: 1.987e-07  t[s]:     57.61
+SCF: Cycle: 12   Etot: -7.942277625713399   dEtot: -1.376e-08   |Residual|: 1.587e-05   |deigs|: 8.690e-07  t[s]:     57.90
+SCF: Cycle: 13   Etot: -7.942277633876431   dEtot: -8.163e-09   |Residual|: 5.438e-06   |deigs|: 9.518e-07  t[s]:     58.18
+SCF: Cycle: 14   Etot: -7.942277638821596   dEtot: -4.945e-09   |Residual|: 8.862e-06   |deigs|: 2.241e-08  t[s]:     58.48
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[  0.0278115    5.21079    5.21079  ]
+[    5.21079  0.0278115    5.21079  ]
+[    5.21079    5.21079  0.0278115  ]
+unit cell volume = 280.705
+
+# Strain Tensor:
+[   -0.0801974    0.0024612    0.0024612  ]
+[    0.0024612   -0.0801974    0.0024612  ]
+[    0.0024612    0.0024612   -0.0801974  ]
+
+# Stress Tensor:
+[  5.03531e-05   4.6391e-05   4.6391e-05  ]
+[   4.6391e-05  5.03531e-05   4.6391e-05  ]
+[   4.6391e-05   4.6391e-05  5.03531e-05  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.022576427883100   0.022576427883100   0.022576427883100 1
+ion Si   0.277423572116900   0.277423572116900   0.277423572116900 1
+
+
+# Forces in Lattice coordinates:
+force Si   0.071386088138161   0.071386088138161   0.071386088138161 1
+force Si  -0.071386088138161  -0.071386088138161  -0.071386088138161 1
+
+# Energy components:
+   Eewald =       -8.2902255419376978
+       EH =        0.5759528868410640
+     Eloc =       -2.1907880553251524
+      Enl =        1.6135364558357499
+      Exc =       -4.2885508091999833
+ Exc_core =        1.6535514041271415
+       KE =        2.9842460208372934
+-------------------------------------
+     Etot =       -7.9422776388215848
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   3  Etot: -7.942277638821585  |grad|_K:  1.236e-02  alpha:  7.581e-01  linmin:  3.074e-01  t[s]:     59.70
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.942556541857881   dEtot: -1.549e-03   |Residual|: 1.601e-02   |deigs|: 2.965e-04  t[s]:     60.55
+SCF: Cycle:  1   Etot: -7.942737052045199   dEtot: -1.805e-04   |Residual|: 8.496e-03   |deigs|: 8.029e-04  t[s]:     60.90
+SCF: Cycle:  2   Etot: -7.942817825054186   dEtot: -8.077e-05   |Residual|: 1.218e-03   |deigs|: 8.869e-04  t[s]:     61.26
+SCF: Cycle:  3   Etot: -7.942822715444056   dEtot: -4.890e-06   |Residual|: 6.237e-04   |deigs|: 1.117e-04  t[s]:     61.56
+SCF: Cycle:  4   Etot: -7.942824386549349   dEtot: -1.671e-06   |Residual|: 1.464e-04   |deigs|: 4.531e-05  t[s]:     61.86
+SCF: Cycle:  5   Etot: -7.942825021167657   dEtot: -6.346e-07   |Residual|: 6.631e-05   |deigs|: 1.342e-05  t[s]:     62.19
+SCF: Cycle:  6   Etot: -7.942825301754244   dEtot: -2.806e-07   |Residual|: 4.484e-05   |deigs|: 2.028e-06  t[s]:     62.49
+SCF: Cycle:  7   Etot: -7.942825443207768   dEtot: -1.415e-07   |Residual|: 2.002e-05   |deigs|: 3.869e-06  t[s]:     62.79
+SCF: Cycle:  8   Etot: -7.942825515219408   dEtot: -7.201e-08   |Residual|: 1.189e-05   |deigs|: 7.919e-07  t[s]:     63.10
+SCF: Cycle:  9   Etot: -7.942825552378081   dEtot: -3.716e-08   |Residual|: 1.232e-05   |deigs|: 7.538e-07  t[s]:     63.43
+SCF: Cycle: 10   Etot: -7.942825572495225   dEtot: -2.012e-08   |Residual|: 4.817e-06   |deigs|: 7.423e-07  t[s]:     63.71
+SCF: Cycle: 11   Etot: -7.942825583269445   dEtot: -1.077e-08   |Residual|: 8.110e-06   |deigs|: 1.173e-08  t[s]:     64.01
+SCF: Cycle: 12   Etot: -7.942825589203514   dEtot: -5.934e-09   |Residual|: 8.017e-06   |deigs|: 5.140e-08  t[s]:     64.32
+SCF: Cycle: 13   Etot: -7.942825592500555   dEtot: -3.297e-09   |Residual|: 9.000e-06   |deigs|: 4.280e-09  t[s]:     64.63
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[  0.0261748    5.21519    5.21519  ]
+[    5.21519  0.0261748    5.21519  ]
+[    5.21519    5.21519  0.0261748  ]
+unit cell volume = 281.551
+
+# Strain Tensor:
+[   -0.0792746   0.00231636   0.00231636  ]
+[   0.00231636   -0.0792746   0.00231636  ]
+[   0.00231636   0.00231636   -0.0792746  ]
+
+# Stress Tensor:
+[  6.40751e-05  1.76829e-05  1.76829e-05  ]
+[  1.76829e-05  6.40751e-05  1.76829e-05  ]
+[  1.76829e-05  1.76829e-05  6.40751e-05  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.024940065029336   0.024940065029336   0.024940065029336 1
+ion Si   0.275059934970663   0.275059934970663   0.275059934970663 1
+
+
+# Forces in Lattice coordinates:
+force Si   0.009757166954962   0.009757166954962   0.009757166954962 1
+force Si  -0.009757166954962  -0.009757166954962  -0.009757166954962 1
+
+# Energy components:
+   Eewald =       -8.2839442638126854
+       EH =        0.5765960752921467
+     Eloc =       -2.1939519655543691
+      Enl =        1.6115314194612009
+      Exc =       -4.2865542372861620
+ Exc_core =        1.6535508058790156
+       KE =        2.9799465735202899
+-------------------------------------
+     Etot =       -7.9428255925005606
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   4  Etot: -7.942825592500561  |grad|_K:  3.380e-03  alpha:  1.000e+00  linmin: -4.554e-02  t[s]:     65.86
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.034 +0.034
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.942898194216543   dEtot: -8.940e-06   |Residual|: 1.166e-03   |deigs|: 1.732e-06  t[s]:     66.57
+SCF: Cycle:  1   Etot: -7.942900331965911   dEtot: -2.138e-06   |Residual|: 5.815e-04   |deigs|: 6.626e-05  t[s]:     66.88
+SCF: Cycle:  2   Etot: -7.942900744733588   dEtot: -4.128e-07   |Residual|: 8.093e-05   |deigs|: 6.283e-05  t[s]:     67.18
+SCF: Cycle:  3   Etot: -7.942900823714810   dEtot: -7.898e-08   |Residual|: 3.840e-05   |deigs|: 9.494e-06  t[s]:     67.48
+SCF: Cycle:  4   Etot: -7.942900852832582   dEtot: -2.912e-08   |Residual|: 1.976e-05   |deigs|: 3.143e-06  t[s]:     67.79
+SCF: Cycle:  5   Etot: -7.942900867094241   dEtot: -1.426e-08   |Residual|: 6.144e-06   |deigs|: 3.000e-06  t[s]:     68.09
+SCF: Cycle:  6   Etot: -7.942900874525093   dEtot: -7.431e-09   |Residual|: 4.142e-06   |deigs|: 4.630e-07  t[s]:     68.39
+SCF: Cycle:  7   Etot: -7.942900878611052   dEtot: -4.086e-09   |Residual|: 3.742e-06   |deigs|: 3.963e-07  t[s]:     68.70
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[  0.0231553    5.20688    5.20688  ]
+[    5.20688  0.0231553    5.20688  ]
+[    5.20688    5.20688  0.0231553  ]
+unit cell volume = 280.451
+
+# Strain Tensor:
+[   -0.0804769   0.00204915   0.00204915  ]
+[   0.00204915   -0.0804769   0.00204915  ]
+[   0.00204915   0.00204915   -0.0804769  ]
+
+# Stress Tensor:
+[  5.26377e-05   1.1346e-05   1.1346e-05  ]
+[   1.1346e-05  5.26377e-05   1.1346e-05  ]
+[   1.1346e-05   1.1346e-05  5.26377e-05  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025304601949650   0.025304601949650   0.025304601949650 1
+ion Si   0.274695398050350   0.274695398050350   0.274695398050350 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.001233172469964  -0.001233172469964  -0.001233172469964 1
+force Si   0.001233172469964   0.001233172469964   0.001233172469964 1
+
+# Energy components:
+   Eewald =       -8.2949312470287282
+       EH =        0.5747579008595741
+     Eloc =       -2.1850686146662857
+      Enl =        1.6130867466326975
+      Exc =       -4.2887945294264540
+ Exc_core =        1.6535510877768391
+       KE =        2.9844977772413097
+-------------------------------------
+     Etot =       -7.9429008786110478
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   5  Etot: -7.942900878611048  |grad|_K:  2.374e-03  alpha:  1.000e+00  linmin: -2.171e-01  t[s]:     69.96
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.034 +0.034
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.942956876903393   dEtot: -1.475e-06   |Residual|: 3.855e-04   |deigs|: 2.722e-07  t[s]:     70.76
+SCF: Cycle:  1   Etot: -7.942957177065134   dEtot: -3.002e-07   |Residual|: 1.755e-04   |deigs|: 3.791e-05  t[s]:     71.06
+SCF: Cycle:  2   Etot: -7.942957216820011   dEtot: -3.975e-08   |Residual|: 5.905e-05   |deigs|: 2.822e-05  t[s]:     71.34
+SCF: Cycle:  3   Etot: -7.942957229003735   dEtot: -1.218e-08   |Residual|: 1.810e-05   |deigs|: 1.180e-05  t[s]:     71.64
+SCF: Cycle:  4   Etot: -7.942957233792670   dEtot: -4.789e-09   |Residual|: 1.077e-05   |deigs|: 2.859e-06  t[s]:     71.95
+SCF: Cycle:  5   Etot: -7.942957236239602   dEtot: -2.447e-09   |Residual|: 2.028e-06   |deigs|: 1.894e-06  t[s]:     72.26
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[   0.020044    5.19784    5.19784  ]
+[    5.19784   0.020044    5.19784  ]
+[    5.19784    5.19784   0.020044  ]
+unit cell volume = 279.241
+
+# Strain Tensor:
+[    -0.081802   0.00177381   0.00177381  ]
+[   0.00177381    -0.081802   0.00177381  ]
+[   0.00177381   0.00177381    -0.081802  ]
+
+# Stress Tensor:
+[  3.93567e-05  9.85506e-06  9.85506e-06  ]
+[  9.85506e-06  3.93567e-05  9.85506e-06  ]
+[  9.85506e-06  9.85506e-06  3.93567e-05  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025274389510402   0.025274389510402   0.025274389510402 1
+ion Si   0.274725610489598   0.274725610489598   0.274725610489598 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.001207232946739  -0.001207232946739  -0.001207232946739 1
+force Si   0.001207232946739   0.001207232946739   0.001207232946739 1
+
+# Energy components:
+   Eewald =       -8.3068890986563630
+       EH =        0.5728437115804210
+     Eloc =       -2.1756620917460974
+      Enl =        1.6148971889359940
+      Exc =       -4.2913126324903281
+ Exc_core =        1.6535514323426759
+       KE =        2.9896142537941044
+-------------------------------------
+     Etot =       -7.9429572362395922
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   6  Etot: -7.942957236239592  |grad|_K:  1.798e-03  alpha:  1.000e+00  linmin: -9.544e-01  t[s]:     73.51
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943027691244452   dEtot: -1.434e-05   |Residual|: 1.247e-03   |deigs|: 2.610e-06  t[s]:     74.33
+SCF: Cycle:  1   Etot: -7.943030480020125   dEtot: -2.789e-06   |Residual|: 5.747e-04   |deigs|: 1.164e-04  t[s]:     74.63
+SCF: Cycle:  2   Etot: -7.943030886401882   dEtot: -4.064e-07   |Residual|: 1.701e-04   |deigs|: 8.871e-05  t[s]:     74.94
+SCF: Cycle:  3   Etot: -7.943030990680657   dEtot: -1.043e-07   |Residual|: 5.818e-05   |deigs|: 3.156e-05  t[s]:     75.24
+SCF: Cycle:  4   Etot: -7.943031033442013   dEtot: -4.276e-08   |Residual|: 2.665e-05   |deigs|: 1.114e-05  t[s]:     75.55
+SCF: Cycle:  5   Etot: -7.943031053410154   dEtot: -1.997e-08   |Residual|: 8.249e-06   |deigs|: 3.369e-06  t[s]:     75.85
+SCF: Cycle:  6   Etot: -7.943031063905581   dEtot: -1.050e-08   |Residual|: 8.060e-06   |deigs|: 1.785e-06  t[s]:     76.15
+SCF: Cycle:  7   Etot: -7.943031069747092   dEtot: -5.842e-09   |Residual|: 2.179e-06   |deigs|: 1.270e-06  t[s]:     76.45
+SCF: Cycle:  8   Etot: -7.943031072964835   dEtot: -3.218e-09   |Residual|: 5.538e-06   |deigs|: 6.627e-07  t[s]:     76.76
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.00838125    5.16999    5.16999  ]
+[    5.16999 0.00838125    5.16999  ]
+[    5.16999    5.16999 0.00838125  ]
+unit cell volume = 275.704
+
+# Strain Tensor:
+[   -0.0856984  0.000741704  0.000741704  ]
+[  0.000741704   -0.0856984  0.000741704  ]
+[  0.000741704  0.000741704   -0.0856984  ]
+
+# Stress Tensor:
+[ -1.40763e-06  2.52234e-06  2.52234e-06  ]
+[  2.52234e-06 -1.40763e-06  2.52234e-06  ]
+[  2.52234e-06  2.52234e-06 -1.40763e-06  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025238143168178   0.025238143168178   0.025238143168178 1
+ion Si   0.274761856831822   0.274761856831822   0.274761856831822 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.003931021076555  -0.003931021076555  -0.003931021076555 1
+force Si   0.003931021076555   0.003931021076555   0.003931021076555 1
+
+# Energy components:
+   Eewald =       -8.3422618658934447
+       EH =        0.5671908676672219
+     Eloc =       -2.1479019646025024
+      Enl =        1.6203896496500585
+      Exc =       -4.2987729245719963
+ Exc_core =        1.6535524904870433
+       KE =        3.0047726742988075
+-------------------------------------
+     Etot =       -7.9430310729648088
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   7  Etot: -7.943031072964809  |grad|_K:  6.776e-04  alpha:  1.000e+00  linmin: -4.224e-02  t[s]:     78.01
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943034104506637   dEtot: -5.623e-07   |Residual|: 8.301e-05   |deigs|: 8.977e-08  t[s]:     78.72
+SCF: Cycle:  1   Etot: -7.943034222585326   dEtot: -1.181e-07   |Residual|: 6.424e-05   |deigs|: 1.165e-06  t[s]:     79.02
+SCF: Cycle:  2   Etot: -7.943034247375772   dEtot: -2.479e-08   |Residual|: 3.166e-05   |deigs|: 1.142e-06  t[s]:     79.32
+SCF: Cycle:  3   Etot: -7.943034255295267   dEtot: -7.919e-09   |Residual|: 9.333e-06   |deigs|: 4.697e-07  t[s]:     79.64
+SCF: Cycle:  4   Etot: -7.943034258654421   dEtot: -3.359e-09   |Residual|: 6.509e-06   |deigs|: 2.837e-07  t[s]:     79.96
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.00376135    5.16768    5.16768  ]
+[    5.16768 0.00376135    5.16768  ]
+[    5.16768    5.16768 0.00376135  ]
+unit cell volume = 275.704
+
+# Strain Tensor:
+[   -0.0856987  0.000332863  0.000332863  ]
+[  0.000332863   -0.0856987  0.000332863  ]
+[  0.000332863  0.000332863   -0.0856987  ]
+
+# Stress Tensor:
+[ -1.43412e-06  7.63945e-07  7.63945e-07  ]
+[  7.63945e-07 -1.43412e-06  7.63945e-07  ]
+[  7.63945e-07  7.63945e-07 -1.43412e-06  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025130321932318   0.025130321932318   0.025130321932318 1
+ion Si   0.274869678067682   0.274869678067682   0.274869678067682 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.002391024976415  -0.002391024976415  -0.002391024976415 1
+force Si   0.002391024976415   0.002391024976415   0.002391024976415 1
+
+# Energy components:
+   Eewald =       -8.3422488190485815
+       EH =        0.5672040865648794
+     Eloc =       -2.1479442283255801
+      Enl =        1.6204245700179984
+      Exc =       -4.2987793935970515
+ Exc_core =        1.6535524904514594
+       KE =        3.0047570352824637
+-------------------------------------
+     Etot =       -7.9430342586544134
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   8  Etot: -7.943034258654413  |grad|_K:  4.077e-04  alpha:  1.000e+00  linmin: -6.902e-01  t[s]:     81.20
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943035288376890   dEtot: -3.644e-07   |Residual|: 1.099e-04   |deigs|: 6.092e-08  t[s]:     81.88
+SCF: Cycle:  1   Etot: -7.943035374373570   dEtot: -8.600e-08   |Residual|: 7.550e-05   |deigs|: 4.289e-06  t[s]:     82.18
+SCF: Cycle:  2   Etot: -7.943035392310490   dEtot: -1.794e-08   |Residual|: 1.368e-05   |deigs|: 6.304e-06  t[s]:     82.48
+SCF: Cycle:  3   Etot: -7.943035397918249   dEtot: -5.608e-09   |Residual|: 7.002e-06   |deigs|: 5.761e-07  t[s]:     82.78
+SCF: Cycle:  4   Etot: -7.943035400305165   dEtot: -2.387e-09   |Residual|: 6.588e-06   |deigs|: 6.102e-07  t[s]:     83.09
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.00105513    5.16667    5.16667  ]
+[    5.16667 0.00105513    5.16667  ]
+[    5.16667    5.16667 0.00105513  ]
+unit cell volume = 275.759
+
+# Strain Tensor:
+[    -0.085638  9.33745e-05  9.33745e-05  ]
+[  9.33745e-05    -0.085638  9.33745e-05  ]
+[  9.33745e-05  9.33745e-05    -0.085638  ]
+
+# Stress Tensor:
+[ -7.63309e-07  2.25951e-07  2.25951e-07  ]
+[  2.25951e-07 -7.63309e-07  2.25951e-07  ]
+[  2.25951e-07  2.25951e-07 -7.63309e-07  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025034227346448   0.025034227346448   0.025034227346448 1
+ion Si   0.274965772653552   0.274965772653552   0.274965772653552 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.000570516120822  -0.000570516120822  -0.000570516120822 1
+force Si   0.000570516120822   0.000570516120822   0.000570516120822 1
+
+# Energy components:
+   Eewald =       -8.3416909971116979
+       EH =        0.5672929472237558
+     Eloc =       -2.1483810838716604
+      Enl =        1.6203459519417798
+      Exc =       -4.2986625218406713
+ Exc_core =        1.6535524737431058
+       KE =        3.0045078296102341
+-------------------------------------
+     Etot =       -7.9430354003051535
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   9  Etot: -7.943035400305154  |grad|_K:  1.018e-04  alpha:  1.000e+00  linmin: -4.366e-01  t[s]:     84.33
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943035459100592   dEtot: -2.975e-09   |Residual|: 3.044e-06   |deigs|: 2.239e-09  t[s]:     84.94
+SCF: Cycle:  1   Etot: -7.943035492049267   dEtot: -3.295e-08   |Residual|: 3.418e-05   |deigs|: 1.219e-07  t[s]:     85.36
+SCF: Cycle:  2   Etot: -7.943035493020616   dEtot: -9.713e-10   |Residual|: 3.703e-05   |deigs|: 9.811e-08  t[s]:     85.66
+SCF: Cycle:  3   Etot: -7.943035493645551   dEtot: -6.249e-10   |Residual|: 3.671e-05   |deigs|: 1.609e-07  t[s]:     85.96
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.000328594    5.16649    5.16649  ]
+[    5.16649 0.000328594    5.16649  ]
+[    5.16649    5.16649 0.000328594  ]
+unit cell volume = 275.788
+
+# Strain Tensor:
+[    -0.085606  2.90791e-05  2.90791e-05  ]
+[  2.90791e-05    -0.085606  2.90791e-05  ]
+[  2.90791e-05  2.90791e-05    -0.085606  ]
+
+# Stress Tensor:
+[ -4.79352e-07  1.46975e-08  1.46975e-08  ]
+[  1.46975e-08 -4.79352e-07  1.46975e-08  ]
+[  1.46975e-08  1.46975e-08 -4.79352e-07  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025008882556577   0.025008882556577   0.025008882556577 1
+ion Si   0.274991117443423   0.274991117443423   0.274991117443423 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.000207982482993  -0.000207982482993  -0.000207982482993 1
+force Si   0.000207982482993   0.000207982482993   0.000207982482993 1
+
+# Energy components:
+   Eewald =       -8.3413981654603120
+       EH =        0.5673509907966695
+     Eloc =       -2.1486419886246462
+      Enl =        1.6203161573882245
+      Exc =       -4.2986069013475960
+ Exc_core =        1.6535524647854976
+       KE =        3.0043919488166200
+-------------------------------------
+     Etot =       -7.9430354936455405
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:  10  Etot: -7.943035493645541  |grad|_K:  4.033e-05  alpha:  1.000e+00  linmin: -2.954e-01  t[s]:     87.23
+LatticeMinimize: None of the convergence criteria satisfied after 10 iterations.
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+End date and time: Mon Mar  4 13:33:07 2019  (Duration: 0-0:01:27.32)
+Done!
+
+*************** JDFTx 1.4.2  ***************
+
+Start date and time: Mon Mar  4 13:36:43 2019
+Executable jdftx with command-line: -i latticeOpt.in
+Running on hosts (process indices):  dhcp-ccc-1230.eduroam.cornell.edu (0-3)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)
+Resource initialization completed at t[s]:      0.00
+Run totals: 4 processes, 12 threads, 0 GPUs
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+dump Ionic State
+dump-name Si.$VAR
+elec-cutoff 20 100
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBE
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42
+forces-output-coords Positions
+ion Si   0.025008882556577   0.025008882556577   0.025008882556577 1
+ion Si   0.274991117443423   0.274991117443423   0.274991117443423 1
+ion-species GBRV/$ID_pbe.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 8 8 8 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice  \
+	   0.000328593623541    5.166490571269953    5.166490571269953  \
+	   5.166490571269953    0.000328593623541    5.166490571269953  \
+	   5.166490571269953    5.166490571269953    0.000328593623541 
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          10 \
+	history              15 \
+	knormThreshold       0 \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.001
+pcm-variant GLSSA13
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Non-trivial transmission matrix:
+[   1   0   0  ]
+[  -1   1   0  ]
+[   0  -1   1  ]
+with reduced lattice vectors:
+[     -5.166162      0.000000      5.166491  ]
+[      5.166162     -5.166162      5.166491  ]
+[      0.000000      5.166162      0.000329  ]
+
+Found 24 point-group symmetries of the bravais lattice
+Found 12 space-group symmetries with basis
+Applied RMS atom displacement 1.0977e-16 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[ 0.000328594    5.16649    5.16649  ]
+[    5.16649 0.000328594    5.16649  ]
+[    5.16649    5.16649 0.000328594  ]
+unit cell volume = 275.788
+G =
+[  -0.608129    0.60809    0.60809  ]
+[    0.60809  -0.608129    0.60809  ]
+[    0.60809    0.60809  -0.608129  ]
+Minimum fftbox size, Smin = [  36  36  36  ]
+Chosen fftbox size, S = [  36  36  36  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[ 0.000328594    5.16649    5.16649  ]
+[    5.16649 0.000328594    5.16649  ]
+[    5.16649    5.16649 0.000328594  ]
+unit cell volume = 275.788
+G =
+[  -0.608129    0.60809    0.60809  ]
+[    0.60809  -0.608129    0.60809  ]
+[    0.60809    0.60809  -0.608129  ]
+Minimum fftbox size, Smin = [  32  32  32  ]
+Chosen fftbox size, S = [  32  32  32  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBE GGA exchange.
+Initalized PBE GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/Users/juanmendezvalderrama/Documents/JDFTX/build/pseudopotentials/GBRV/si_pbe.uspp':
+  Title: Si.  Created by USPP 7.3.6 on 14-9-2013
+  Reference state energy: -4.599342.  4 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -0.397366
+    |310>  occupation: 2  eigenvalue: -0.149981
+  lMax: 2  lLocal: 3  QijEcut: 5
+  6 projectors sampled on a log grid with 627 points:
+    l: 0  eig: -0.397364  rCut: 1.6
+    l: 0  eig: 1.000000  rCut: 1.6
+    l: 1  eig: -0.149982  rCut: 1.6
+    l: 1  eig: 1.000000  rCut: 1.6
+    l: 2  eig: -0.100000  rCut: 1.7
+    l: 2  eig: 0.100000  rCut: 1.7
+  Partial core density with radius 1.45
+  Transforming core density to a uniform radial grid of dG=0.02 with 1821 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 1821 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 432 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 1821 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 432 points.
+  Core radius for overlap checks: 1.70 bohrs.
+
+Initialized 1 species with 2 total atoms.
+
+Folded 1 k-points by 8x8x8 to 512 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+Reduced to 65 k-points under symmetry. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons:   8.000000   nBands: 4   nStates: 65
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 1178.123 , ideal nbasis = 1178.188
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 2.346468 bohr.
+Real space sum over 1331 unit cells with max indices [  5  5  5  ]
+Reciprocal space sum over 2197 terms with max indices [  6  6  6  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+Si pseudo-atom occupations:   s ( 2 )  p ( 2 )
+	FillingsUpdate:  mu: +0.257014582  nElectrons: 8.000000
+LCAOMinimize: Iter:   0  Etot: -7.8875402766461971  |grad|_K:  3.860e-05  alpha:  1.000e+00
+	FillingsUpdate:  mu: +0.256967923  nElectrons: 8.000000
+LCAOMinimize: Iter:   1  Etot: -7.8875440291138084  |grad|_K:  1.312e-06  alpha:  9.569e-01  linmin: -5.222e-04  cgtest:  1.406e-03  t[s]:      1.41
+	FillingsUpdate:  mu: +0.256969615  nElectrons: 8.000000
+LCAOMinimize: Iter:   2  Etot: -7.8875440335315323  |grad|_K:  5.317e-08  alpha:  9.755e-01  linmin: -9.605e-04  cgtest:  1.925e-03  t[s]:      1.93
+	FillingsUpdate:  mu: +0.256969652  nElectrons: 8.000000
+LCAOMinimize: Iter:   3  Etot: -7.8875440335379920  |grad|_K:  3.882e-10  alpha:  8.686e-01  linmin: -4.940e-02  cgtest:  8.211e-02  t[s]:      2.29
+LCAOMinimize: Encountered beta<0, resetting CG.
+LCAOMinimize: Converged (|Delta Etot|<1.000000e-06 for 2 iters).
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBE exchange-correlation functional:
+      J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      2.33
+
+
+--------- Lattice Minimization ---------
+Minimization of dimension 2 over strains spanned by:
+[  0.57735  0  0  ]
+[  0  0.57735  0  ]
+[  0  0  0.57735  ]
+
+[  0  0.408248  0.408248  ]
+[  0.408248  0  0.408248  ]
+[  0.408248  0.408248  0  ]
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.941323869090296   dEtot: -5.378e-02   |Residual|: 6.307e-02   |deigs|: 7.716e-03  t[s]:      2.86
+SCF: Cycle:  1   Etot: -7.942514776789966   dEtot: -1.191e-03   |Residual|: 3.815e-02   |deigs|: 4.872e-03  t[s]:      3.26
+SCF: Cycle:  2   Etot: -7.942995546980610   dEtot: -4.808e-04   |Residual|: 7.405e-03   |deigs|: 8.153e-03  t[s]:      3.65
+SCF: Cycle:  3   Etot: -7.943009444350706   dEtot: -1.390e-05   |Residual|: 3.586e-03   |deigs|: 1.293e-03  t[s]:      3.96
+SCF: Cycle:  4   Etot: -7.943021357547977   dEtot: -1.191e-05   |Residual|: 3.050e-04   |deigs|: 9.213e-04  t[s]:      4.21
+SCF: Cycle:  5   Etot: -7.943024860594538   dEtot: -3.503e-06   |Residual|: 3.507e-04   |deigs|: 7.138e-05  t[s]:      4.49
+SCF: Cycle:  6   Etot: -7.943026993847660   dEtot: -2.133e-06   |Residual|: 1.820e-04   |deigs|: 8.899e-05  t[s]:      4.78
+SCF: Cycle:  7   Etot: -7.943028195331209   dEtot: -1.201e-06   |Residual|: 9.030e-05   |deigs|: 3.072e-05  t[s]:      5.07
+SCF: Cycle:  8   Etot: -7.943028938591668   dEtot: -7.433e-07   |Residual|: 6.349e-05   |deigs|: 1.272e-06  t[s]:      5.33
+SCF: Cycle:  9   Etot: -7.943029392269893   dEtot: -4.537e-07   |Residual|: 7.084e-05   |deigs|: 1.599e-05  t[s]:      5.60
+SCF: Cycle: 10   Etot: -7.943029684526276   dEtot: -2.923e-07   |Residual|: 6.243e-05   |deigs|: 2.313e-05  t[s]:      5.85
+SCF: Cycle: 11   Etot: -7.943029791265301   dEtot: -1.067e-07   |Residual|: 3.330e-04   |deigs|: 8.428e-05  t[s]:      6.11
+SCF: Cycle: 12   Etot: -7.943029903840006   dEtot: -1.126e-07   |Residual|: 3.937e-04   |deigs|: 2.501e-05  t[s]:      6.38
+SCF: Cycle: 13   Etot: -7.943030032572734   dEtot: -1.287e-07   |Residual|: 2.080e-04   |deigs|: 6.085e-05  t[s]:      6.64
+SCF: Cycle: 14   Etot: -7.943030106915541   dEtot: -7.434e-08   |Residual|: 7.992e-05   |deigs|: 3.423e-05  t[s]:      6.90
+SCF: Cycle: 15   Etot: -7.943030110158118   dEtot: -3.243e-09   |Residual|: 2.301e-04   |deigs|: 4.017e-05  t[s]:      7.16
+SCF: Cycle: 16   Etot: -7.943030170275478   dEtot: -6.012e-08   |Residual|: 1.885e-04   |deigs|: 9.820e-06  t[s]:      7.50
+SCF: Cycle: 17   Etot: -7.943030182062706   dEtot: -1.179e-08   |Residual|: 1.488e-04   |deigs|: 1.368e-05  t[s]:      7.74
+SCF: Cycle: 18   Etot: -7.943030196351222   dEtot: -1.429e-08   |Residual|: 3.622e-05   |deigs|: 5.305e-05  t[s]:      7.99
+SCF: Cycle: 19   Etot: -7.943030200333888   dEtot: -3.983e-09   |Residual|: 1.409e-05   |deigs|: 5.942e-06  t[s]:      8.24
+SCF: Cycle: 20   Etot: -7.943030201470754   dEtot: -1.137e-09   |Residual|: 2.145e-05   |deigs|: 1.243e-06  t[s]:      8.48
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.000328594    5.16649    5.16649  ]
+[    5.16649 0.000328594    5.16649  ]
+[    5.16649    5.16649 0.000328594  ]
+unit cell volume = 275.788
+
+# Strain Tensor:
+[            0            0            0  ]
+[            0            0            0  ]
+[            0            0            0  ]
+
+# Stress Tensor:
+[ -2.34646e-07  9.37879e-08  9.37879e-08  ]
+[  9.37879e-08 -2.34646e-07  9.37879e-08  ]
+[  9.37879e-08  9.37879e-08 -2.34646e-07  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025008882556577   0.025008882556577   0.025008882556577 1
+ion Si   0.274991117443423   0.274991117443423   0.274991117443423 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.000136496055795  -0.000136496055795  -0.000136496055795 1
+force Si   0.000136496055795   0.000136496055795   0.000136496055795 1
+
+# Energy components:
+   Eewald =       -8.3413981654603173
+       EH =        0.5673229082454970
+     Eloc =       -2.1485913484974133
+      Enl =        1.6203692236906058
+      Exc =       -4.2985977162879916
+ Exc_core =        1.6535524647854978
+       KE =        3.0043124320535397
+-------------------------------------
+     Etot =       -7.9430302014705809
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   0  Etot: -7.943030201470581  |grad|_K:  2.605e-05  t[s]:      9.56
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943030202677964   dEtot: +0.000e+00   |Residual|: 1.169e-16   |deigs|: 0.000e+00  t[s]:     10.58
+SCF: Cycle:  1   Etot: -7.943030205033596   dEtot: -2.356e-09   |Residual|: 9.245e-06   |deigs|: 9.715e-10  t[s]:     11.33
+SCF: Converged (|deigs|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+LatticeMinimize: 	Wolfe criterion not satisfied: alpha: 1  (E-E0)/|gdotd0|: -2.6248  gdotd/gdotd0: 0.953351 (taking cubic step)
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943030205139920   dEtot: +0.000e+00   |Residual|: 1.101e-16   |deigs|: 0.000e+00  t[s]:     13.17
+SCF: Cycle:  1   Etot: -7.943030205655214   dEtot: -5.153e-10   |Residual|: 3.360e-06   |deigs|: 2.151e-10  t[s]:     13.55
+SCF: Converged (|deigs|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.000323146    5.16649    5.16649  ]
+[    5.16649 0.000323146    5.16649  ]
+[    5.16649    5.16649 0.000323146  ]
+unit cell volume = 275.789
+
+# Strain Tensor:
+[  1.31911e-06 -5.27247e-07 -5.27247e-07  ]
+[ -5.27247e-07  1.31911e-06 -5.27247e-07  ]
+[ -5.27247e-07 -5.27247e-07  1.31911e-06  ]
+
+# Stress Tensor:
+[ -3.17721e-07  1.17352e-07  1.17352e-07  ]
+[  1.17352e-07 -3.17721e-07  1.17352e-07  ]
+[  1.17352e-07  1.17352e-07 -3.17721e-07  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025007491470365   0.025007491470365   0.025007491470365 1
+ion Si   0.274992508529635   0.274992508529635   0.274992508529635 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.000090572312761  -0.000090572312761  -0.000090572312761 1
+force Si   0.000090572312761   0.000090572312761   0.000090572312761 1
+
+# Energy components:
+   Eewald =       -8.3413871574244851
+       EH =        0.5673396778751515
+     Eloc =       -2.1486449945381194
+      Enl =        1.6203578810743644
+      Exc =       -4.2986034186376303
+ Exc_core =        1.6535524644658737
+       KE =        3.0043553415296289
+-------------------------------------
+     Etot =       -7.9430302056552167
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   1  Etot: -7.943030205655217  |grad|_K:  2.247e-05  alpha:  1.088e+00  linmin: -1.978e-01  t[s]:     14.72
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+SCF: Cycle:  0   Etot: -7.943030208662520   dEtot: +0.000e+00   |Residual|: 1.106e-16   |deigs|: 0.000e+00  t[s]:     15.74
+SCF: Cycle:  1   Etot: -7.943030209774635   dEtot: -1.112e-09   |Residual|: 1.072e-05   |deigs|: 1.875e-10  t[s]:     16.47
+SCF: Converged (|deigs|<1.000000e-08 for 2 iters).
+
+Calculating stress tensor...  done!
+
+R = 
+[ 0.000286697    5.16653    5.16653  ]
+[    5.16653 0.000286697    5.16653  ]
+[    5.16653    5.16653 0.000286697  ]
+unit cell volume = 275.797
+
+# Strain Tensor:
+[  1.09905e-05 -4.05496e-06 -4.05496e-06  ]
+[ -4.05496e-06  1.09905e-05 -4.05496e-06  ]
+[ -4.05496e-06 -4.05496e-06  1.09905e-05  ]
+
+# Stress Tensor:
+[ -2.52811e-07  1.12891e-07  1.12891e-07  ]
+[  1.12891e-07 -2.52811e-07  1.12891e-07  ]
+[  1.12891e-07  1.12891e-07 -2.52811e-07  ]
+
+
+# Ionic positions in lattice coordinates:
+ion Si   0.025003281478015   0.025003281478015   0.025003281478015 1
+ion Si   0.274996718521985   0.274996718521985   0.274996718521985 1
+
+
+# Forces in Lattice coordinates:
+force Si  -0.000017957172658  -0.000017957172658  -0.000017957172658 1
+force Si   0.000017957172658   0.000017957172658   0.000017957172658 1
+
+# Energy components:
+   Eewald =       -8.3413064700241470
+       EH =        0.5673560361573268
+     Eloc =       -2.1487190936733773
+      Enl =        1.6203477425806132
+      Exc =       -4.2985883383987549
+ Exc_core =        1.6535524620272828
+       KE =        3.0043274515564189
+-------------------------------------
+     Etot =       -7.9430302097746370
+
+
+Dumping 'Si.wfns' ... done
+Dumping 'Si.ionpos' ... done
+Dumping 'Si.lattice' ... done
+LatticeMinimize: Iter:   2  Etot: -7.943030209774637  |grad|_K:  1.415e-05  alpha:  1.000e+00  linmin: -2.028e-01  t[s]:     17.71
+LatticeMinimize: Converged (|Delta Etot|<1.000000e-06 for 2 iters).
+
+#--- Lowdin population analysis ---
+# oxidation-state Si +0.035 +0.035
+
+End date and time: Mon Mar  4 13:37:01 2019  (Duration: 0-0:00:17.81)
+Done!
