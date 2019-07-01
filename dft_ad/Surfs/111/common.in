@@ -1,0 +1,9 @@
+include spinel111.lattice
+include spinel111.ionpos
+ion-species GBRV/$ID_pbe.uspp
+elec-cutoff 20 100
+coulomb-interaction Slab 001
+coulomb-truncation-embed 0 0 0
+kpoint-folding 3 6 1       #Chosen in inverse proportion to lattice vector length
+lcao-params 30             #More initialization steps for a better starting point
+electronic-SCF
