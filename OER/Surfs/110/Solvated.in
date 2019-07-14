@@ -1,0 +1,9 @@
+include common.in
+initial-state Vacuum.$VAR
+dump-name Solvated.$VAR
+dump End Dtot BoundCharge
+fluid LinearPCM
+pcm-variant CANDLE
+fluid-solvent H2O
+fluid-cation K+ 1.
+fluid-anion Cl- 1.
