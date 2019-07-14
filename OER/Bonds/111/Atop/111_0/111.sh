@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=nodes
-#SBATCH --job-name=Co3O4111_solv
+#SBATCH --job-name=Atop_O_Co3O4111
 #SBATCH --output=Co3O4111_0_solv_%a.txt
 #SBATCH --array=1-2
 #SBATCH --export=surface=111
