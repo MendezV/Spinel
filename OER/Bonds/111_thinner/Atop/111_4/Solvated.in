@@ -1,0 +1,16 @@
+include common.in
+initial-state Vacuum.$VAR
+dump-name Solvated.$VAR
+dump End Dtot BoundCharge Ecomponents EigStats
+
+ionic-minimize \
+    nIterations 10 \
+    energyDiffThreshold 1e-6 \
+    knormThreshold 1e-4  #Threshold on RMS cartesian force
+
+fluid NonlinearPCM
+pcm-variant GLSSA13
+
+fluid-solvent H2O
+fluid-cation K+ 1.
+fluid-anion Cl- 1.

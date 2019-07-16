@@ -1,0 +1,9 @@
+include common.in
+
+ionic-minimize \
+    nIterations 15 \
+    energyDiffThreshold 1e-6 \
+    knormThreshold 1e-4  #Threshold on RMS cartesian force
+
+dump-name Vacuum.$VAR
+dump End State Dtot Ecomponents EigStats
